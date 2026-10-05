@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-77a9+y)*6qybll^mxe9!vx^32+p(eq6zg6cx=u8%#_w=!r7qp(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["organicspices.onrender.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
