@@ -1,0 +1,338 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f8fff8;
+    color: #222;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #7cff9b !important;
+}
+
+
+/* ================================
+   HOME
+================================ */
+
+#home {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 50, 20, 0.55),
+            rgba(0, 30, 10, 0.65)
+        ),
+        url("../images/img11.avif");
+
+    background-size: cover;
+    background-position: center;
+}
+
+#home h1 {
+    font-size: 65px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#home p {
+    font-size: 24px;
+    color: white;
+    margin: 20px 0;
+}
+
+#home .btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   COMMON SECTION
+================================ */
+
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+#about {
+    background: white;
+}
+
+#about img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#about p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* ================================
+   PRODUCTS
+================================ */
+
+#products {
+    background: #eef8ef;
+}
+
+#products h2 {
+    color: #1b5e20;
+}
+
+.product-card {
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card .card-body {
+    padding: 20px;
+}
+
+.product-card h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #198754;
+    margin-bottom: 15px;
+}
+
+.product-card .btn {
+    border-radius: 20px;
+}
+
+
+/* ================================
+   CART / WISHLIST COUNT
+================================ */
+
+#cart-count,
+#wishlist-count {
+    background: #198754;
+    color: white;
+
+    padding: 2px 7px;
+    border-radius: 50%;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+#contact {
+    background: white;
+}
+
+#contact form {
+    padding: 30px;
+
+    background: #f5faf5;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#contact input,
+#contact textarea {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #212529;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    #home h1 {
+        font-size: 42px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+}
+/* ================================
+   CART
+================================ */
+
+#cart {
+    background: #f8fff8;
+}
+
+#cart-items .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#cart-items .card-body {
+    padding: 20px;
+}
+
+#cart-items h5 {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+#cart-total {
+    padding: 20px;
+}
+
+#cart-total h4 {
+    color: #198754;
+    font-weight: 700;
+}
+
+#checkout-btn {
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 600;
+}
+/* ================================
+   WISHLIST
+================================ */
+
+#wishlist {
+    background: #fff;
+}
+
+#wishlist-items .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#wishlist-items .card-body {
+    padding: 20px;
+}
+
+#wishlist-items h5 {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+#wishlist-items .btn {
+    border-radius: 20px;
+}
