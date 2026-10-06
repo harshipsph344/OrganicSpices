@@ -2,14 +2,14 @@
 // REGISTER FORM
 // =================================
 
+const API_BASE_URL = "https://organicspices.onrender.com";
+
 const registerForm =
     document.getElementById("register-form");
-
 
 registerForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
-
 
     // Get form values
 
@@ -44,7 +44,7 @@ registerForm.addEventListener("submit", async function (event) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/users/register/",
+            `${API_BASE_URL}/api/users/register/`,
             {
                 method: "POST",
 
@@ -94,4 +94,4 @@ registerForm.addEventListener("submit", async function (event) {
         );
     }
 
-});1
+});

@@ -2,40 +2,27 @@
 // LOGIN FORM
 // =================================
 
-const loginForm =
-    document.getElementById("login-form");
+const API_BASE_URL = "https://organicspices.onrender.com";
 
+const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
+    const username = document.getElementById("login-username").value.trim();
 
-    // Get form values
-
-    const username =
-        document.getElementById("login-username").value.trim();
-
-    const password =
-        document.getElementById("login-password").value;
-
-
-    // Check fields
+    const password = document.getElementById("login-password").value;
 
     if (!username || !password) {
-
         alert("Please enter username and password.");
-
         return;
     }
-
-
-    // Send login request to Django
 
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/users/login/",
+            `${API_BASE_URL}/api/users/login/`,
             {
                 method: "POST",
 
@@ -44,24 +31,17 @@ loginForm.addEventListener("submit", async function (event) {
                 },
 
                 body: JSON.stringify({
-
                     username: username,
-
                     password: password
-
                 })
             }
         );
 
-
         const data = await response.json();
-
 
         if (response.ok) {
 
             alert("Login successful!");
-
-            // Save logged-in username
 
             localStorage.setItem(
                 "loggedInUser",
@@ -78,14 +58,11 @@ loginForm.addEventListener("submit", async function (event) {
             );
         }
 
-
     } catch (error) {
 
         console.error(error);
 
-        alert(
-            "Unable to connect to the server."
-        );
+        alert("Unable to connect to the server.");
     }
 
 });

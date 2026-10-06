@@ -3,7 +3,8 @@ from django.urls import path
 from .views import (
     register_user,
     login_user,
-    user_profile
+    user_profile,
+    update_profile
 )
 
 
@@ -25,6 +26,12 @@ urlpatterns = [
         "profile/<str:username>/",
         user_profile,
         name="profile"
+    ),
+
+    path(
+        "profile/update/<str:username>/",
+        update_profile,
+        name="update-profile"
     ),
 
 ]

@@ -1,7 +1,7 @@
 // =================================
 // PRODUCT DATA
 // =================================
-
+const API_BASE_URL = "https://organicspices.onrender.com";
 let products = [];
 
 
@@ -25,7 +25,7 @@ async function loadProducts() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/products/"
+            `${API_BASE_URL}/api/products/`
         );
 
         if (!response.ok) {
@@ -236,8 +236,8 @@ async function addToCart(
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/cart/add/",
-            {
+    `${API_BASE_URL}/api/cart/add/`,
+    {
                 method: "POST",
 
                 headers: {
@@ -301,8 +301,8 @@ async function loadCart() {
     try {
 
         const response = await fetch(
-            `http://127.0.0.1:8000/api/cart/${loggedInUser}/`
-        );
+    `${API_BASE_URL}/api/cart/${loggedInUser}/`
+);
 
         if (!response.ok) {
 
@@ -469,7 +469,7 @@ async function increaseQuantity(index) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/cart/update/",
+            `${API_BASE_URL}/api/cart/update/`
             {
                 method: "POST",
 
@@ -544,7 +544,7 @@ async function decreaseQuantity(index) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/cart/update/",
+            `${API_BASE_URL}/api/cart/update/`
             {
                 method: "POST",
 
@@ -623,7 +623,7 @@ async function removeCartItem(index) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/cart/update/",
+            `${API_BASE_URL}/api/cart/update/`
             {
                 method: "POST",
 
@@ -699,8 +699,8 @@ async function checkout() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/orders/create/",
-            {
+    `${API_BASE_URL}/api/orders/create/`,
+    {
                 method: "POST",
 
                 headers: {
@@ -757,9 +757,8 @@ async function loadOrders() {
     try {
 
         const response = await fetch(
-            `http://127.0.0.1:8000/api/orders/${loggedInUser}/`
-        );
-
+    `${API_BASE_URL}/api/orders/${loggedInUser}/`
+);
         if (!response.ok) {
 
             throw new Error(
@@ -862,7 +861,7 @@ async function loadWishlist() {
     try {
 
         const response = await fetch(
-            `http://127.0.0.1:8000/api/wishlist/${loggedInUser}/`
+            `${API_BASE_URL}/api/wishlist/${loggedInUser}/`
         );
 
         if (!response.ok) {
@@ -942,7 +941,7 @@ async function toggleWishlist(
         if (!existingProduct) {
 
             response = await fetch(
-                "http://127.0.0.1:8000/api/wishlist/add/",
+                `${API_BASE_URL}/api/wishlist/add/`
                 {
                     method: "POST",
 
@@ -963,7 +962,7 @@ async function toggleWishlist(
         } else {
 
             response = await fetch(
-                "http://127.0.0.1:8000/api/wishlist/remove/",
+                `${API_BASE_URL}/api/wishlist/remove/`,
                 {
                     method: "POST",
 
@@ -1089,7 +1088,7 @@ async function removeWishlistItem(index) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/wishlist/remove/",
+            `${API_BASE_URL}/api/wishlist/remove/`
             {
                 method: "POST",
 

@@ -103,6 +103,8 @@ def login_user(request):
         },
         status=status.HTTP_200_OK
     )
+
+
 # =================================
 # USER PROFILE
 # =================================
@@ -124,6 +126,63 @@ def user_profile(request, username):
             {
                 "username": user.username,
                 "email": user.email,
+                "phone": profile.phone,
+                "address": profile.address
+            },
+            status=status.HTTP_200_OK
+        )
+
+    except User.DoesNotExist:
+
+        return Response(
+            {
+                "message": "User not found."
+            },
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+    except UserProfile.DoesNotExist:
+
+        return Response(
+            {
+                "message": "Profile not found."
+            },
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+
+# =================================
+# UPDATE USER PROFILE
+# =================================
+
+@api_view(["POST"])
+def update_profile(request, username):
+
+    try:
+
+        user = User.objects.get(
+            username=username
+        )
+
+        profile = UserProfile.objects.get(
+            user=user
+        )
+
+        profile.phone = request.data.get(
+            "phone",
+            profile.phone
+        )
+
+        profile.address = request.data.get(
+            "address",
+            profile.address
+        )
+
+        profile.save()
+
+        return Response(
+            {
+                "message": "Profile updated successfully.",
                 "phone": profile.phone,
                 "address": profile.address
             },

@@ -74,6 +74,8 @@
                         </h2>
 
 
+                        <!-- Username -->
+
                         <div class="mb-3">
 
                             <label class="form-label fw-bold">
@@ -89,6 +91,8 @@
 
                         </div>
 
+
+                        <!-- Email -->
 
                         <div class="mb-3">
 
@@ -106,6 +110,8 @@
                         </div>
 
 
+                        <!-- Phone -->
+
                         <div class="mb-3">
 
                             <label class="form-label fw-bold">
@@ -116,11 +122,13 @@
                                 type="text"
                                 id="profile-phone"
                                 class="form-control"
-                                readonly
+                                placeholder="Enter your phone number"
                             >
 
                         </div>
 
+
+                        <!-- Address -->
 
                         <div class="mb-3">
 
@@ -132,16 +140,34 @@
                                 id="profile-address"
                                 class="form-control"
                                 rows="3"
-                                readonly
+                                placeholder="Enter your address"
                             ></textarea>
 
                         </div>
 
 
+                        <!-- Save Button -->
+
+                        <div class="text-center mt-4">
+
+                            <button
+                                type="button"
+                                class="btn btn-success"
+                                onclick="updateProfile()"
+                            >
+                                💾 Save Changes
+                            </button>
+
+                        </div>
+
+
+                        <!-- Profile Message -->
+
                         <div
                             id="profile-message"
                             class="text-center mt-3"
                         ></div>
+
 
                     </div>
 
