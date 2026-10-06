@@ -469,7 +469,7 @@ async function increaseQuantity(index) {
     try {
 
         const response = await fetch(
-            `${API_BASE_URL}/api/cart/update/`
+            `${API_BASE_URL}/api/cart/update/`,
             {
                 method: "POST",
 
@@ -544,7 +544,7 @@ async function decreaseQuantity(index) {
     try {
 
         const response = await fetch(
-            `${API_BASE_URL}/api/cart/update/`
+            `${API_BASE_URL}/api/cart/update/`,
             {
                 method: "POST",
 
@@ -623,7 +623,7 @@ async function removeCartItem(index) {
     try {
 
         const response = await fetch(
-            `${API_BASE_URL}/api/cart/update/`
+            `${API_BASE_URL}/api/cart/update/`,
             {
                 method: "POST",
 
@@ -941,7 +941,7 @@ async function toggleWishlist(
         if (!existingProduct) {
 
             response = await fetch(
-                `${API_BASE_URL}/api/wishlist/add/`
+                `${API_BASE_URL}/api/wishlist/add/`,
                 {
                     method: "POST",
 
@@ -1088,7 +1088,7 @@ async function removeWishlistItem(index) {
     try {
 
         const response = await fetch(
-            `${API_BASE_URL}/api/wishlist/remove/`
+            `${API_BASE_URL}/api/wishlist/remove/`,
             {
                 method: "POST",
 
